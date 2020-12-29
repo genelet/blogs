@@ -141,7 +141,7 @@ To create a new Python programming environment named *liu_env* and put the defin
 ```bash
 $ mkdir pythons
 $ cd pythons
-$ python3 -m venv testing_env
+$ python3 -m venv liu_env
 ```
 
 A new directory called *liu_env* will be created under *pythons* which contains your environment directories and filess:
