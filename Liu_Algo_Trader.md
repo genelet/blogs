@@ -216,7 +216,7 @@ Make sure you are ALWAYS under environment _(liu_env)_. Now you can use *python*
 
 ### 5.1) Install *wheel*
 
-You must install this package which is missing in LiuAlgoTrader.
+This package is missing in Ubuntu. Install it.
 
 ```bash
 $ pip install wheel
