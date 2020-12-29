@@ -127,7 +127,7 @@ $ sudo apt install python3-pip build-essential libssl-dev libffi-dev python3-dev
 ### Install venv
 
 ```bash
-$ sudo apt install -y python3-venv
+$ sudo apt install python3-venv
 ```
 
 <br />
@@ -142,7 +142,7 @@ $ cd pythons
 $ python3 -m venv testing_env
 ```
 
-A new directory called "liu_env" will be created under "pythons" which contains your environment directories and filess:
+A new directory called *liu_env* will be created under *pythons* which contains your environment directories and filess:
 ```bash
 $ ls liu_env
 bin include lib lib64 pyvenv.cfg share
@@ -156,7 +156,7 @@ bin include lib lib64 pyvenv.cfg share
 $ source ./liu_env/bin/activate
 (liu_env) you@machine:~/pythons
 ```
-Your command prompt will now ne prefixed with _(liu_env)_.
+Your command prompt will now be prefixed with _(liu_env)_.
 
 To deactivate
 ```bash
@@ -208,7 +208,7 @@ $ export APCA_API_SECRET_KEY=your_secret
 
 ## Install LiuAlgoTrader
 
-Make sure you are always under _(liu_env)_. You can use *python* and *pip* instead of *python3* and *pip3* now.
+Make sure you are always under environment _(liu_env)_. Now you can use *python* and *pip* instead of *python3* and *pip3*.
 
 <br />
 
@@ -219,11 +219,12 @@ You must install this package which is missing in LiuAlgoTrader.
 ```bash
 $ pip install wheel
 ```
-Note we don't use *pip3* but just *pip*.
+Note you don't use *pip3* but just *pip*.
 
 <br />
  
 ### Install the Main Package
+
 ```bash
 $ pip install liualgotrader
 ```
