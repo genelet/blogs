@@ -5,48 +5,59 @@ If you are planning to set up a ML trading system in Python, it is a good framew
 
 I installed it in a fresh Ubuntu 20.04 Desktop machine. Here is how-to.
 
-## Install Docker Engine and Docker Composer
+<br>
+<br>
+<br>
+## Install Docker Engine and Docker Compose
 
-https://docs.docker.com/engine/install/ubuntu/
+Please follow up [the office document](https://docs.docker.com/engine/install/ubuntu/) to install Docker.
 
-### Remove possible existing docker and associated packages
+<br>
+<br>
+### Remove Old Packages
 
-> $ sudo apt-get remove docker docker-engine docker.io containerd runc
+```bash
+$ sudo apt-get remove docker docker-engine docker.io containerd runc
+```
 
-You should get an error reporting that docker is not found.
+You should get an error reporting that Docker is not found.
 
+<br>
+<br>
 ### Add the Docker repository
 
 Preparing:
-
-> $ sudo apt-get update
->
-> $ sudo apt-get install \
+```bash
+$ sudo apt-get update
+$ sudo apt-get install \
     apt-transport-https \
     ca-certificates \
     curl \
     gnupg-agent \
     software-properties-common
->
-> $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
 
 Verifying that the download has the right siganiture:
 
-> $ sudo apt-key fingerprint 0EBFCD88
+```bash
+$ sudo apt-key fingerprint 0EBFCD88
+```
 
 Add the repository:
+```bash
+$ sudo add-apt-repository \
+  "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) \
+  stable"
+```
 
-> $ sudo add-apt-repository \
->   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
->   $(lsb_release -cs) \
->   stable"
-   
 Install the Docker Engine:
-  
-> $ sudo apt-get update
->
-> $ sudo apt-get install docker-ce docker-ce-cli containerd.io
- 
+```bash
+$ sudo apt-get update
+$ sudo apt-get install docker-ce docker-ce-cli containerd.io
+```
+
 Test the installation is correct
  
 > $ sudo docker run hello-world
