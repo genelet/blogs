@@ -1,21 +1,21 @@
-- How to install LiuAlgoTrader?
+* How to install LiuAlgoTrader?
 
 LiuAlgoTrader is a scalable, multi-process framework for effective algorithmic trading. 
 If you are planning to set up a ML trading system in Python, it is a good starting point.
 
 I installed it in a fresh Ubuntu 20.04 Desktop machine. Here is how-to.
 
--- Install Docker Engine and Docker Composer
+** Install Docker Engine and Docker Composer
 
 https://docs.docker.com/engine/install/ubuntu/
 
---- Remove possible existing docker and associated packages
+*** Remove possible existing docker and associated packages
 
 sudo apt-get remove docker docker-engine docker.io containerd runc
 
 For a fresh Ubuntu, you should get an error reporting that docker is not found.
 
---- Use Docker repository
+*** Use Docker repository
 
 Preparing:
 
@@ -43,17 +43,17 @@ $ sudo add-apt-repository \
    
   Install
   
-  $ sudo apt-get update
- $ sudo apt-get install docker-ce docker-ce-cli containerd.io
+$ sudo apt-get update
+$ sudo apt-get install docker-ce docker-ce-cli containerd.io
  
- Test the installation is correct
+Test the installation is correct
  
- $ sudo docker run hello-world
+$ sudo docker run hello-world
  
  You will get a report that the docker daemon is up and running correctly.
  The server will automatically be launched when the machine reboot.
  
- --- Let a normal user to run docker
+ *** Let a normal user to run docker
  
  Add your user account to the docker group:
  
@@ -65,7 +65,8 @@ $ sudo add-apt-repository \
  
  $ docker run hello-world
  
- -- Install Docker Composer
+ 
+ ** Install Docker Composer
  
  https://docs.docker.com/compose/install/
  
@@ -79,22 +80,22 @@ $ docker-compose --version
 docker-compose version 1.27.4, build 1110ad01
 
 
- -- Install Python tools
+** Install Python tools
  
  Python3 has already been installed in Ubuntu. Yet, you should install *pip* and *venv* to make a user-owned development environment
  separated from the machine-wide python environment.
  
  https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-programming-environment-on-an-ubuntu-20-04-server
  
- --- Install pip
+ *** Install pip
  
  sudo apt install python3-pip build-essential libssl-dev libffi-dev python3-dev
  
- --- install venv
+ *** install venv
  
  sudo apt install -y python3-venv
  
- --- Set up a special environment
+ *** Set up a special python environment
  
 Assuming you want to create a new Python programming environment and have the associatged definition files in "pythons", do:
 
@@ -110,7 +111,7 @@ A new directory called "liu_env" will be created under "pythons" which contains 
 ls liu_env
 bin include lib lib64 pyvenv.cfg share
 
---- Activate this environment
+*** Activate the environment
 
 source ./liu_env/bin/activate
 
@@ -120,9 +121,9 @@ to deactivate
 
 deactivate
 
-Note that under your liu_env, you can and should use python and pip, instead of python3 and pip3.
+Note that under the *liu_env*, you should use *python* and *pip*, instead of *python3* and *pip3*.
 
---- Create a hello worl program
+*** Create a hello worl program
 
 (liu_env) you@machine:~/pythons $ vi hello.py
 
@@ -137,16 +138,27 @@ it should output
 
 Hello, World!
 
--- Install LiuAlgoTrader
 
---- Register at Alpaca
+** Registration at Alpaca
 
-Go to ... to register and get a paper trading account. This is free if you live in the US.
+Go to https://alpaca.markets to register an trading account. You need only the free paper trading account to
+run this LiuAlgoTrader . 
 
-At the end, you will get 
+After login, go to "Paper Account". On the right-hand side, find "Your API Keys". View it. 
+You should "Generate Key" for the 1st-time. Everytime if you regenerate key, both the API Key ID and API Key Secret will be changed.
+
+Save the ID and Secret in your environment:
+ 
+- export APCA_API_BASE_URL=https://paper-api.alpaca.markets
+- export APCA_API_KEY_ID=your_id
+- export APCA_API_SECRET_KEY=your_secret
+
+
+** Install LiuAlgoTrader
+
 Make sure you are under liu_env. 
 
---- install "wheel"
+*** install "wheel"
 
 You must install this package which is missing in the fresh Ubuntu
 
@@ -155,13 +167,13 @@ You must install this package which is missing in the fresh Ubuntu
  (note that in liu_env, you don't use pip3 but just pip)
  
  
---- install the main package
+*** install the main package
 
 pip install liualgotrader
 
 it takes a while, and then OK
 
---- Configure the framework
+*** Configure the framework
 
 The wizard will walk you through the configuration of environment variables, setup of a local dockerized PostgreSQL and pre-populate with test data.
 
@@ -169,7 +181,13 @@ run
 
 $ liu quickstart
 
-and follow the installation wizard instructions. Answer "Yes" to all promotes. Note that at this 
+and follow the installation wizard instructions. Answer "Yes" to all promotes.
+
+
+*** Trade Simulation
+
+Please follow the description on screen closely. This program will download and install Postgres SQL and simulate a daily paper trading. At the end of the quickstart, you will get a web page reporting the process and revenue.
+
 
  
  
