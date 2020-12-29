@@ -155,15 +155,15 @@ bin include lib lib64 pyvenv.cfg share
 ### 3.4) Activate the Environment
 
 ```bash
-$ source ./liu_env/bin/activate
-(liu_env) you@machine:~/pythons
+you@machine:~/pythons$ source ./liu_env/bin/activate
+(liu_env) you@machine:~/pythons$
 ```
 Your command prompt will now be prefixed with _(liu_env)_.
 
 To deactivate
 ```bash
-(liu_env) you@machine:~/pythons $ deactivate
-you@machine:~/pythons $
+(liu_env) you@machine:~/pythons$ deactivate
+you@machine:~/pythons$
 ```
 
 <br />
@@ -171,7 +171,7 @@ you@machine:~/pythons $
 ### 3.5) Create a *hello worl* Program
 
 ```bash
-(liu_env) you@machine:~/pythons $ vi hello.py
+(liu_env) you@machine:~/pythons$ vi hello.py
 ```
 
 and put this line into the new file
@@ -182,7 +182,7 @@ print("Hello, World!")
 
 save and quit. And run
 ```bash
-(liu_env) you@machine:~/pythons $ python hello.py
+(liu_env) you@machine:~/pythons$ python hello.py
 Hello, World!
 ```
 
@@ -210,7 +210,7 @@ $ export APCA_API_SECRET_KEY=your_secret
 
 ## Chapter 5. Install LiuAlgoTrader
 
-Make sure you are always under environment _(liu_env)_. Now you can use *python* and *pip* instead of *python3* and *pip3*.
+Make sure you are ALWAYS under environment _(liu_env)_. Now you can use *python* and *pip* instead of *python3* and *pip3*.
 
 <br />
 
