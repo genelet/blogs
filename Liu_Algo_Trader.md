@@ -28,7 +28,7 @@ You should get an error reporting that Docker is not found.
 
 ### 1.2) Add the Docker Repository
 
-#### Preparing
+Preparing
 
 ```bash
 $ sudo apt-get update
@@ -41,13 +41,13 @@ $ sudo apt-get install \
 $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ```
 
-#### Verify the Signature
+Verify the Signature
 
 ```bash
 $ sudo apt-key fingerprint 0EBFCD88
 ```
 
-#### Add the Repository
+Add the Repository
 
 ```bash
 $ sudo add-apt-repository \
@@ -65,7 +65,7 @@ $ sudo apt-get update
 $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
 
-#### Test 
+To test 
 ```bash
 $ sudo docker run hello-world
 ```
@@ -94,7 +94,7 @@ $ docker run hello-world
 
 ## Chapter 2. Install Docker Compose
  
-Please follow up the [office document](https://docs.docker.com/compose/install/) to install Compose.
+Please follow up [the office document](https://docs.docker.com/compose/install/) to install Compose.
 ```bash
 $ sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 $ sudo chmod +x /usr/local/bin/docker-compose
