@@ -162,8 +162,8 @@ Your command prompt will now be prefixed with _(liu_env)_.
 
 To deactivate
 ```bash
-$ deactivate
-you@machine:~/pythons
+(liu_env) you@machine:~/pythons $ deactivate
+you@machine:~/pythons $
 ```
 
 <br />
