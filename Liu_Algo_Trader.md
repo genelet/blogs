@@ -24,9 +24,10 @@ You should get an error reporting that Docker is not found.
 
 <br />
 
-### Add the Docker repository
+### Add the Docker Repository
 
-Preparing:
+#### Preparing
+
 ```bash
 $ sudo apt-get update
 $ sudo apt-get install \
@@ -38,13 +39,14 @@ $ sudo apt-get install \
 $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ```
 
-Verifying that the download has the right siganiture:
+#### Verify the Signature
 
 ```bash
 $ sudo apt-key fingerprint 0EBFCD88
 ```
 
-Add the repository:
+#### Add the Repository
+
 ```bash
 $ sudo add-apt-repository \
   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
@@ -52,154 +54,198 @@ $ sudo add-apt-repository \
   stable"
 ```
 
-Install the Docker Engine:
+<br />
+
+### Install the Docker Engine
+
 ```bash
 $ sudo apt-get update
 $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
 
-Test the installation is correct
- 
-> $ sudo docker run hello-world
- 
+#### Test 
+```bash
+$ sudo docker run hello-world
+```
+
  You will get a report that the docker daemon is up and running correctly.
  The server will automatically be launched when the machine reboot.
  
-### Let a normal user to run docker
+ <br />
  
- Add your user account to the docker group:
- 
-> $ sudo usermod -aG docker $USER
- 
- Run the same hello-world docker command without sudo:
+### Let Normal User to Run Docker
 
-> $ newgrp docker
->
-> $ docker run hello-world
- 
- 
-## Install Docker Composer
- 
- https://docs.docker.com/compose/install/
- 
-> $ sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
->
-> $ sudo chmod +x /usr/local/bin/docker-compose
- 
- Test the installation.
+Add user to the group:
 
-> $ docker-compose --version
->
-> docker-compose version 1.27.4, build 1110ad01
+```bash
+$ sudo usermod -aG docker $USER
+``` 
 
+Run the same *hello-world* command without sudo:
 
-## Install Python tools
+```bash
+$ newgrp docker
+$ docker run hello-world
+```
+
+<br />
+
+## Install Docker Compose
  
- Python3 has already been installed in Ubuntu. Yet, you should install *pip* and *venv* to make a user-owned development environment
- separated from the machine-wide python environment.
+Please follow up the [office document](https://docs.docker.com/compose/install/) to install Compose.
+```bash
+$ sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+$ sudo chmod +x /usr/local/bin/docker-compose
+```
+
+### Test the installation.
+```bash
+$ docker-compose --version
+docker-compose version 1.27.4, build 1110ad01
+```
+
+<br />
+<br />
+
+## Install Python Tools
  
- https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-programming-environment-on-an-ubuntu-20-04-server
+Python3 has already been installed in Ubuntu. Yet, you should install *pip* and *venv* to make a user-owned development environment
+ separated from the machine-wide python.
  
+Please see [this document](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-programming-environment-on-an-ubuntu-20-04-server) for a complete installation guide.
+
+<br />
+
 ### Install pip
+
+```bash
+$ sudo apt install python3-pip build-essential libssl-dev libffi-dev python3-dev
+```
+
+<br />
+
+### Install venv
+
+```bash
+$ sudo apt install -y python3-venv
+```
+
+<br />
+
+### Setup New Environment
  
-> $ sudo apt install python3-pip build-essential libssl-dev libffi-dev python3-dev
- 
-### install venv
- 
-> $ sudo apt install -y python3-venv
- 
-### Set up a special python environment
- 
-Assuming you want to create a new Python programming environment and have the associatged definition files in "pythons", do:
+To create a new Python programming environment named *liu_env* and put the definition files in *pythons*, do:
 
-> $ mkdir pythons
->
-> $ cd pythons
- 
-Then create an environment by running the following command:
+```bash
+$ mkdir pythons
+$ cd pythons
+$ python3 -m venv testing_env
+```
 
-> $ python3 -m venv testing_env
+A new directory called "liu_env" will be created under "pythons" which contains your environment directories and filess:
+```bash
+$ ls liu_env
+bin include lib lib64 pyvenv.cfg share
+```
 
-A new directory called "liu_env" will be created under "pythons" which contains a few items defining your environments:
+<br />
 
-> $ ls liu_env
->
-> bin include lib lib64 pyvenv.cfg share
+### Activate the Environment
 
-### Activate the environment
+```bash
+$ source ./liu_env/bin/activate
+(liu_env) you@machine:~/pythons
+```
+Your command prompt will now ne prefixed with _(liu_env)_.
 
-> $ source ./liu_env/bin/activate
+To deactivate
+```bash
+$ deactivate
+you@machine:~/pythons
+```
 
-Your command prompt will now be prefixed with _(liu_env)_.
+<br />
 
-to deactivate
+### Create a *hello worl* Program
 
-> $ deactivate
+```bash
+(liu_env) you@machine:~/pythons $ vi hello.py
+```
 
-Note that under the _liu_env_, you should use *python* and *pip*, instead of *python3* and *pip3*.
+and put this line into the new file
 
-### Create a hello worl program
-
-> (liu_env) you@machine:~/pythons $ vi hello.py
-
-and put this line in the new file
-
-> print("Hello, World!")
+```lang-python
+print("Hello, World!")
+```
 
 save and quit. And run
+```bash
+(liu_env) you@machine:~/pythons $ python hello.py
+Hello, World!
+```
 
-> (liu_env) you@machine:~/pythons $ python hello.py
-
-it should output
-
-> Hello, World!
-
+<br />
+<br />
 
 ## Registration at Alpaca
 
-Go to https://alpaca.markets to register an trading account. You need only the free paper trading account to
-run this LiuAlgoTrader . 
+Go to https://alpaca.markets to register an trading account. You need only the free paper trading account.
 
 After login, go to _Paper Account_. On the right-hand side, find _Your API Keys_. _View_ it. 
-You should _Regenerate Key_ for the 1st-time usage. Note that if you regenerate key, both the API Key ID and API Key Secret will be changed.
+You should _Regenerate Key_ for the 1st-time usage. 
+
+Note that if you regenerate key, both the API Key ID and API Key Secret will be changed.
 
 Save the ID and Secret in your environment:
- 
-- $ export APCA_API_BASE_URL=https://paper-api.alpaca.markets
-- $ export APCA_API_KEY_ID=your_id
-- $ export APCA_API_SECRET_KEY=your_secret
+```bash
+$ export APCA_API_BASE_URL=https://paper-api.alpaca.markets
+$ export APCA_API_KEY_ID=your_id
+$ export APCA_API_SECRET_KEY=your_secret
+```
 
+<br />
+<br />
 
 ## Install LiuAlgoTrader
 
-Make sure you are under _(liu_env)_. 
+Make sure you are always under _(liu_env)_. You can use *python* and *pip* instead of *python3* and *pip3* now.
 
-### install "wheel"
+<br />
 
-You must install this package which is missing in the fresh Ubuntu
+### Install *wheel*
 
-> $ pip install wheel
+You must install this package which is missing in LiuAlgoTrader.
+
+```bash
+$ pip install wheel
+```
+Note we don't use *pip3* but just *pip*.
+
+<br />
  
- (note we don't use *pip3* but just *pip*)
- 
- 
-### install the main package
+### Install the Main Package
+```bash
+$ pip install liualgotrader
+```
 
-> $ pip install liualgotrader
+It takes a while to finish, and then OK.
 
-it takes a while, and then OK
+<br />
 
-### Configure the framework
+### Configure the Framework
 
-The wizard will walk you through the configuration of environment variables, setup of a local dockerized PostgreSQL and pre-populate with test data.
+Run the command to go through the wizard, which will walk you through the configuration of environment variables, setup of a local dockerized PostgreSQL and pre-populate with test data.
 
-run
+```bash
+$ liu quickstart
+```
 
-> $ liu quickstart
+Follow the wizard instructions on screen. Answer "Yes" to all prompts.
 
-and follow the installation wizard instructions. Answer "Yes" to all promotes.
-
+<br />
 
 ### Trade Simulation
 
 Please follow the description on screen closely. This program will download and install Postgres SQL and simulate a daily paper trading. At the end of the quickstart, you will get a web page reporting the process and revenue.
+
+You are now ready to build up your own stragery and trade!
