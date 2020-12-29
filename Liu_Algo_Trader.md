@@ -5,15 +5,15 @@ If you are planning to set up a ML trading system in Python, it is a good framew
 
 I installed it in a fresh Ubuntu 20.04 Desktop machine. Here is how-to.
 
-<br>
-<br>
-<br>
+<br />
+<br />
+
 ## Install Docker Engine and Docker Compose
 
 Please follow up [the office document](https://docs.docker.com/engine/install/ubuntu/) to install Docker.
 
-<br>
-<br>
+<br />
+
 ### Remove Old Packages
 
 ```bash
@@ -22,8 +22,8 @@ $ sudo apt-get remove docker docker-engine docker.io containerd runc
 
 You should get an error reporting that Docker is not found.
 
-<br>
-<br>
+<br />
+
 ### Add the Docker repository
 
 Preparing:
