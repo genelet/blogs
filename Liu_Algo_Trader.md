@@ -10,13 +10,13 @@ I installed it in a fresh Ubuntu 20.04 Desktop machine. Here is how-to.
 <br />
 <br />
 
-## Install Docker Engine and Docker Compose
+## Chapter 1. Install Docker Engine and Docker Compose
 
 Please follow up [the office document](https://docs.docker.com/engine/install/ubuntu/) to install Docker.
 
 <br />
 
-### Remove Old Packages
+### 1.1) Remove Old Packages
 
 ```bash
 $ sudo apt-get remove docker docker-engine docker.io containerd runc
@@ -26,7 +26,7 @@ You should get an error reporting that Docker is not found.
 
 <br />
 
-### Add the Docker Repository
+### 1.2) Add the Docker Repository
 
 #### Preparing
 
@@ -58,7 +58,7 @@ $ sudo add-apt-repository \
 
 <br />
 
-### Install the Docker Engine
+### 1.3) Install the Docker Engine
 
 ```bash
 $ sudo apt-get update
@@ -75,7 +75,7 @@ $ sudo docker run hello-world
  
  <br />
  
-### Let Normal User to Run Docker
+### 1.4) Normal User to Run Docker
 
 Add user to the group:
 
@@ -92,7 +92,7 @@ $ docker run hello-world
 
 <br />
 
-## Install Docker Compose
+## Chapter 2. Install Docker Compose
  
 Please follow up the [office document](https://docs.docker.com/compose/install/) to install Compose.
 ```bash
@@ -100,7 +100,7 @@ $ sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docke
 $ sudo chmod +x /usr/local/bin/docker-compose
 ```
 
-### Test the installation.
+### 2.1) Test the installation.
 ```bash
 $ docker-compose --version
 docker-compose version 1.27.4, build 1110ad01
@@ -109,7 +109,7 @@ docker-compose version 1.27.4, build 1110ad01
 <br />
 <br />
 
-## Install Python Tools
+## Chapter 3. Install Python Tools
  
 Python3 has already been installed in Ubuntu. Yet, you should install *pip* and *venv* to make a user-owned development environment
  separated from the machine-wide python.
@@ -118,7 +118,7 @@ Please see [this document](https://www.digitalocean.com/community/tutorials/how-
 
 <br />
 
-### Install pip
+### 3.1) Install *pip*
 
 ```bash
 $ sudo apt install python3-pip build-essential libssl-dev libffi-dev python3-dev
@@ -126,7 +126,7 @@ $ sudo apt install python3-pip build-essential libssl-dev libffi-dev python3-dev
 
 <br />
 
-### Install venv
+### 3.2) Install *venv*
 
 ```bash
 $ sudo apt install python3-venv
@@ -134,7 +134,7 @@ $ sudo apt install python3-venv
 
 <br />
 
-### Setup New Environment
+### 3.3) Setup New Environment
  
 To create a new Python programming environment named *liu_env* and put the definition files in *pythons*, do:
 
@@ -152,7 +152,7 @@ bin include lib lib64 pyvenv.cfg share
 
 <br />
 
-### Activate the Environment
+### 3.4) Activate the Environment
 
 ```bash
 $ source ./liu_env/bin/activate
@@ -168,7 +168,7 @@ you@machine:~/pythons
 
 <br />
 
-### Create a *hello worl* Program
+### 3.5) Create a *hello worl* Program
 
 ```bash
 (liu_env) you@machine:~/pythons $ vi hello.py
@@ -189,7 +189,7 @@ Hello, World!
 <br />
 <br />
 
-## Registration at Alpaca
+## Chapter 4. Registration at Alpaca
 
 Go to https://alpaca.markets to register an trading account. You need only the free paper trading account.
 
@@ -208,13 +208,13 @@ $ export APCA_API_SECRET_KEY=your_secret
 <br />
 <br />
 
-## Install LiuAlgoTrader
+## Chapter 5. Install LiuAlgoTrader
 
 Make sure you are always under environment _(liu_env)_. Now you can use *python* and *pip* instead of *python3* and *pip3*.
 
 <br />
 
-### Install *wheel*
+### 5.1) Install *wheel*
 
 You must install this package which is missing in LiuAlgoTrader.
 
@@ -225,7 +225,7 @@ Note you don't use *pip3* but just *pip*.
 
 <br />
  
-### Install the Main Package
+### 5.2) Install the Main Package
 
 ```bash
 $ pip install liualgotrader
@@ -235,7 +235,7 @@ It takes a while to finish, and then OK.
 
 <br />
 
-### Configure the Framework
+### 5.3) Configure the Framework
 
 Run the command to go through the wizard, which will walk you through the configuration of environment variables, setup of a local dockerized PostgreSQL and pre-populate with test data.
 
@@ -247,7 +247,7 @@ Follow the wizard instructions on screen. Answer "Yes" to all prompts.
 
 <br />
 
-### Trade Simulation
+### 5.4) Trade Simulation
 
 Please follow the description on screen closely. This program will download and install Postgres SQL and simulate a daily paper trading. At the end of the quickstart, you will get a web page reporting the process and revenue.
 
