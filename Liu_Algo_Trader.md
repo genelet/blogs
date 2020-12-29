@@ -1,7 +1,7 @@
 # How to install LiuAlgoTrader?
 
 LiuAlgoTrader is a scalable, multi-process framework for effective algorithmic trading. 
-If you are planning to set up a ML trading system in Python, it is a good starting point.
+If you are planning to set up a ML trading system in Python, it is a good framework.
 
 I installed it in a fresh Ubuntu 20.04 Desktop machine. Here is how-to.
 
@@ -11,11 +11,11 @@ https://docs.docker.com/engine/install/ubuntu/
 
 ### Remove possible existing docker and associated packages
 
-sudo apt-get remove docker docker-engine docker.io containerd runc
+> $ sudo apt-get remove docker docker-engine docker.io containerd runc
 
-For a fresh Ubuntu, you should get an error reporting that docker is not found.
+You should get an error reporting that docker is not found.
 
-### Use Docker repository
+### Add the Docker repository
 
 Preparing:
 
@@ -27,6 +27,7 @@ Preparing:
     curl \
     gnupg-agent \
     software-properties-common
+>
 > $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 Verifying that the download has the right siganiture:
@@ -43,6 +44,7 @@ Add the repository:
 Install the Docker Engine:
   
 > $ sudo apt-get update
+>
 > $ sudo apt-get install docker-ce docker-ce-cli containerd.io
  
 Test the installation is correct
@@ -60,7 +62,8 @@ Test the installation is correct
  
  Run the same hello-world docker command without sudo:
 
-> $ newgrp docker 
+> $ newgrp docker
+>
 > $ docker run hello-world
  
  
@@ -69,12 +72,13 @@ Test the installation is correct
  https://docs.docker.com/compose/install/
  
 > $ sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
- 
+>
 > $ sudo chmod +x /usr/local/bin/docker-compose
  
  Test the installation.
 
 > $ docker-compose --version
+>
 > docker-compose version 1.27.4, build 1110ad01
 
 
@@ -87,7 +91,7 @@ Test the installation is correct
  
 ### Install pip
  
- sudo apt install python3-pip build-essential libssl-dev libffi-dev python3-dev
+> $ sudo apt install python3-pip build-essential libssl-dev libffi-dev python3-dev
  
 ### install venv
  
@@ -98,6 +102,7 @@ Test the installation is correct
 Assuming you want to create a new Python programming environment and have the associatged definition files in "pythons", do:
 
 > $ mkdir pythons
+>
 > $ cd pythons
  
 Then create an environment by running the following command:
@@ -107,6 +112,7 @@ Then create an environment by running the following command:
 A new directory called "liu_env" will be created under "pythons" which contains a few items defining your environments:
 
 > $ ls liu_env
+>
 > bin include lib lib64 pyvenv.cfg share
 
 ### Activate the environment
@@ -126,6 +132,7 @@ Note that under the _liu_env_, you should use *python* and *pip*, instead of *py
 > (liu_env) you@machine:~/pythons $ vi hello.py
 
 and put this line in the new file
+
 > print("Hello, World!")
 
 save and quit. And run
@@ -142,8 +149,8 @@ it should output
 Go to https://alpaca.markets to register an trading account. You need only the free paper trading account to
 run this LiuAlgoTrader . 
 
-After login, go to "Paper Account". On the right-hand side, find "Your API Keys". View it. 
-You should "Generate Key" for the 1st-time. Everytime if you regenerate key, both the API Key ID and API Key Secret will be changed.
+After login, go to _Paper Account_. On the right-hand side, find _Your API Keys_. _View_ it. 
+You should _Regenerate Key_ for the 1st-time usage. Note that if you regenerate key, both the API Key ID and API Key Secret will be changed.
 
 Save the ID and Secret in your environment:
  
