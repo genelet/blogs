@@ -2,7 +2,7 @@
 
 LiuAlgoTrader is a scalable, multi-process framework for effective algorithmic trading. 
 If you are planning to set up a ML trading system in Python, it is a good one.
-Find the home page of LiuAlgoTrader [here](https://github.com/amor71/LiuAlgoTrader). The author is
+Find the home page of LiuAlgoTrader [here](https://github.com/amor71/LiuAlgoTrader) by
 [amor71](mailto:amichay@sgeltd.com).
 
 I installed it in a fresh Ubuntu 20.04 Desktop machine. Here is how-to.
@@ -252,4 +252,4 @@ Follow the wizard instructions on screen. Answer "Yes" to all prompts.
 
 Please follow the description on screen closely. This program will simulate a daily paper trading. At the end of the quickstart, you will launch a web browser reporting the trade records and revenue.
 
-You are now ready to build up your own strategy and trade!
+You are now ready to learn [the framework document](https://liualgotrader.readthedocs.io/en/latest/), build up your own strategy and trade!
