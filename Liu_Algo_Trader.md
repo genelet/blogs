@@ -1,11 +1,11 @@
-# How to install LiuAlgoTrader?
+# How to install LiuAlgoTrader on Ubuntu 20.04 Desktop?
 
 LiuAlgoTrader is a scalable, multi-process framework for effective algorithmic trading. 
 If you are planning to set up a ML trading system in Python, it is a good one.
 Find the home page of LiuAlgoTrader [here](https://github.com/amor71/LiuAlgoTrader) by
 [amor71](mailto:amichay@sgeltd.com).
 
-I installed it in a fresh Ubuntu 20.04 Desktop machine. Here is how-to.
+I installed it on a fresh Ubuntu 20.04 Desktop machine. Here it is.
 
 <br />
 <br />
