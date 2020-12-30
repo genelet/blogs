@@ -41,13 +41,13 @@ $ sudo apt-get install \
 $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ```
 
-Verify the Signature
+Verify the signature
 
 ```bash
 $ sudo apt-key fingerprint 0EBFCD88
 ```
 
-Add the Repository
+Add the repository
 
 ```bash
 $ sudo add-apt-repository \
@@ -100,7 +100,7 @@ $ sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docke
 $ sudo chmod +x /usr/local/bin/docker-compose
 ```
 
-### 2.1) Test the installation.
+To test:
 ```bash
 $ docker-compose --version
 docker-compose version 1.27.4, build 1110ad01
@@ -251,4 +251,4 @@ Follow the wizard instructions on screen. Answer "Yes" to all prompts.
 
 Please follow the description on screen closely. This program will download and install Postgres SQL and simulate a daily paper trading. At the end of the quickstart, you will get a web page reporting the process and revenue.
 
-You are now ready to build up your own stragery and trade!
+You are now ready to build up your own strategy and trade!
