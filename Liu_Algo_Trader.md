@@ -1,7 +1,7 @@
 # How to install LiuAlgoTrader?
 
 LiuAlgoTrader is a scalable, multi-process framework for effective algorithmic trading. 
-If you are planning to set up a ML trading system in Python, it is a good framework.
+If you are planning to set up a ML trading system in Python, it is a good one.
 Find the home page of LiuAlgoTrader [here](https://github.com/amor71/LiuAlgoTrader). The author is
 [amor71](mailto:amichay@sgeltd.com).
 
@@ -46,6 +46,7 @@ Verify the signature
 ```bash
 $ sudo apt-key fingerprint 0EBFCD88
 ```
+You now have the key with the fingerprint *9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88*.
 
 Add the repository
 
@@ -71,7 +72,7 @@ $ sudo docker run hello-world
 ```
 
  You will get a report that the docker daemon is up and running correctly.
- The server will automatically be launched when the machine reboot.
+ The server will automatically be launched when the machine reboot the next time.
  
  <br />
  
@@ -111,7 +112,7 @@ docker-compose version 1.27.4, build 1110ad01
 
 ## Chapter 3. Install Python Tools
  
-Python3 has already been installed in Ubuntu. Yet, you should install *pip* and *venv* to make a user-owned development environment
+Python3 has already been installed in Ubuntu. Yet, you should install *pip* and *venv* to make user-owned development environment
  separated from the machine-wide python.
  
 Please see [this document](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-programming-environment-on-an-ubuntu-20-04-server) for a complete installation guide.
@@ -144,7 +145,7 @@ $ cd pythons
 $ python3 -m venv liu_env
 ```
 
-A new directory called *liu_env* will be created under *pythons* which contains your environment directories and filess:
+Directory *liu_env* will be created under *pythons* which contains your environment directories and files:
 ```bash
 $ ls liu_env
 bin include lib lib64 pyvenv.cfg share
@@ -191,12 +192,12 @@ Hello, World!
 
 ## Chapter 4. Registration at Alpaca
 
-Go to https://alpaca.markets to register an trading account. You need only the free paper trading account.
+Go to https://alpaca.markets to register. You need only the free paper trading account.
 
 After login, go to _Paper Account_. On the right-hand side, find _Your API Keys_. _View_ it. 
 You should _Regenerate Key_ for the 1st-time usage. 
 
-Note that if you regenerate key, both the API Key ID and API Key Secret will be changed.
+Note that if you regenerate key, **both the API Key ID and API Key Secret** will be changed.
 
 Save the ID and Secret in your environment:
 ```bash
@@ -237,7 +238,7 @@ It takes a while to finish, and then OK.
 
 ### 5.3) Configure the Framework
 
-Run the command to go through the wizard, which will walk you through the configuration of environment variables, setup of a local dockerized PostgreSQL and pre-populate with test data.
+Run the following command to go through the wizard, which will walk you through the configuration of environment variables, setup of a local dockerized PostgreSQL and pre-populate with test data.
 
 ```bash
 $ liu quickstart
@@ -249,6 +250,6 @@ Follow the wizard instructions on screen. Answer "Yes" to all prompts.
 
 ### 5.4) Trade Simulation
 
-Please follow the description on screen closely. This program will download and install Postgres SQL and simulate a daily paper trading. At the end of the quickstart, you will get a web page reporting the process and revenue.
+Please follow the description on screen closely. This program will simulate a daily paper trading. At the end of the quickstart, you will launch a web browser reporting the trade records and revenue.
 
 You are now ready to build up your own strategy and trade!
